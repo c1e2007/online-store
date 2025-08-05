@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Admin Panel - Online Store</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body {padding: 2rem;}
+    .hidden { display: none; }
+    #admin-content { margin-top: 2rem; }
+    form { margin-bottom: 1.5rem; }
+    input, textarea { width: 100%; padding: 0.5rem; margin-bottom: 1rem; border: 1px solid #ccc; border-radius: 4px; }
+    table { width: 100%; border-collapse: collapse; margin-bottom: 1.5rem; }
+    th, td { border: 1px solid #ccc; padding: 0.5rem; text-align: left; }
+    th { background-color: #f4f4f4; }
+    button { padding: 0.5rem 1rem; cursor: pointer; border: none; border-radius: 4px; background-color: #333; color: #fff; }
+    button.delete-btn { background-color: #d9534f; }
+  </style>
+</head>
+<body>
+  <h1>Admin Panel</h1>
+  <p><a href="index.html">Return to Store</a></p>
+  <div id="login-section">
+    <h2>Login</h2>
+    <input type="text" id="admin-username" placeholder="Username">
+    <input type="password" id="admin-password" placeholder="Password">
+    <button id="login-btn">Login</button>
+    <p id="login-error" style="color:red;"></p>
+  </div>
+  <div id="admin-content" class="hidden">
+    <h2>Manage Products</h2>
+    <form id="product-form">
+      <input type="text" id="product-name" placeholder="Product Name" required>
+      <input type="text" id="product-desc" placeholder="Product Description" required>
+      <input type="number" id="product-price" placeholder="Price" required step="0.01">
+      <input type="text" id="product-image" placeholder="Image URL">
+      <button type="submit">Add Product</button>
+    </form>
+    <table id="products-table">
+      <thead>
+        <tr><th>Name</th><th>Description</th><th>Price</th><th>Image</th><th>Actions</th></tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+
+    <h2>Customer Messages</h2>
+    <table id="messages-table">
+      <thead>
+        <tr><th>Name</th><th>Email</th><th>Message</th></tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+  </div>
+
+  <script src="admin.js"></script>
+</body>
+</html>
